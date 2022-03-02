@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="br-pt">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Calculadora</title>
+</head>
+<body>
+        <div>
+                <h1 id="titulo">Calculadora</h1>
+                <p1 id="subtitulo">Simples</p1>
+        </div>
+
+        
+        <table class="borda">
+                <tr>
+                        <th colspan="4"><p id="resuldado"></p></th>
+                </tr>
+                <tr>
+                        <th><button class="tecla" onclick="clearDisplay()">C</button></th>
+                        <th><button class="tecla" onclick="deletar()"><</button></th>
+                        <th><button class="tecla" onclick="insert('/')">/</button></th>
+                        <th><button class="tecla" onclick="insert('*')">x</button></th>
+                </tr>
+                <tr>
+                        <th><button class="tecla" onclick="insert('7')">7</button></th>
+                        <th><button class="tecla" onclick="insert('8')">8</button></th>
+                        <th><button class="tecla" onclick="insert('9')">9</button></th>
+                        <th><button class="tecla" onclick="insert('-')">-</button></th>
+                </tr>
+                <tr>
+                        <th><button class="tecla" onclick="insert('4')">4</button></th>
+                        <th><button class="tecla" onclick="insert('5')">5</button></th>
+                        <th><button class="tecla" onclick="insert('6')">6</button></th>
+                        <th><button class="tecla" onclick="insert('+')">+</button></th>
+                </tr>
+                <tr>
+                        <th><button class="tecla" onclick="insert('1')">1</button></th>
+                        <th><button class="tecla" onclick="insert('2')">2</button></th>
+                        <th><button class="tecla" onclick="insert('3')">3</button></th>
+                        <th rowspan="2"><button class="tecla" style="height: 44px;" onclick="somar()">=</button></th>
+                </tr>
+                <tr>
+                        <th colspan="2"><button class="tecla"  onclick="insert('0')" style="width: 45px;">0</button></th>
+                        <th><button class="tecla" onclick="insert('.')">.</button></th>
+
+                </tr>
+        </table>
+
+        <script>
+                function insert(num){
+                        var numero = document.getElementById('resuldado').innerHTML;
+                        document.getElementById('resuldado').innerHTML=numero+num;
+
+                }
+                function deletar(){
+                        var resuldado = document.getElementById('resuldado').innerHTML;
+                        document.getElementById('resuldado').innerHTML = resuldado.substring(0,resuldado.length -1);
+                }
+                function clearDisplay(){
+                        document.getElementById('resuldado').innerHTML=null;
+                }
+
+                function somar(){
+                        var equaCao = document.getElementById('resuldado').innerHTML
+                        if(resuldado)
+                                document.getElementById('resuldado').innerHTML = eval(equaCao);
+                        else
+                                document.getElementById('resuldado').innerHTML = "undefined";
+                }
+        </script>
+</body>
+</html>
